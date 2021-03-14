@@ -187,7 +187,7 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 
 #about {
-   background: #2B2B2B;
+   background: #ffffff;
    padding-top: 96px;
    padding-bottom: 66px;
    overflow: hidden;
@@ -342,7 +342,7 @@ ul#nav li.current a { color: #F06000; }
   	-webkit-animation: javascript 2s ease;
 }
 .python {
-  	width: 40%;
+  	width: 80%;
   	-moz-animation:python 2s ease;
   	-webkit-animation: python 2s ease;
 }
@@ -376,7 +376,7 @@ ul#nav li.current a { color: #F06000; }
 }
 @-moz-keyframes python {
   0%   { width: 0px;  }
-  100% { width: 40%;  }
+  100% { width: 80%;  }
 }
 @-moz-keyframes css {
   0%   { width: 0px;  }
@@ -405,7 +405,7 @@ ul#nav li.current a { color: #F06000; }
 }
 @-webkit-keyframes python {
   0%   { width: 0px;  }
-  100% { width: 40%;  }
+  100% { width: 80%;  }
 }
 @-webkit-keyframes css {
   0%   { width: 0px;  }
