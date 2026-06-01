@@ -36,4 +36,3 @@ npm run build
 npm run deploy
 ```
 
-Made with ❤️
