@@ -26,7 +26,7 @@ const skillCategories = [
 const additionalSkills = [
   'REST APIs', 'CI/CD', 'Test Automation', 'Agile', 'API Testing',
   'UI Testing', 'Integration Testing', 'Performance Testing', 'Code Review',
-  'Technical Leadership', 'Cross-functional Collaboration',
+  'Technical Leadership',
 ];
 
 export default function Skills() {
@@ -40,69 +40,70 @@ export default function Skills() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full mb-6" />
           <p className="text-slate-400 max-w-2xl mx-auto font-mono text-sm">
-            // Technical expertise for building quality software
+            // Tech stack and competencies
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {skillCategories.map((category) => (
-            <div key={category.title} className="bg-slate-800 rounded-xl border border-slate-700 p-6 overflow-hidden">
-              {/* Code-style header */}
-              <div className="flex items-center gap-2 mb-6 pb-3 border-b border-slate-700">
-                <div className="w-3 h-3 rounded-full bg-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="ml-2 text-slate-500 font-mono text-sm">{category.title.toLowerCase()}.ts</span>
-              </div>
-
-              {/* Category Header */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-primary-600/20 flex items-center justify-center border border-primary-500/30">
-                  <category.icon className="w-5 h-5 text-primary-400" />
-                </div>
-                <h3 className="text-lg font-semibold text-white font-mono">{category.title}</h3>
-              </div>
-
-              {/* Skills List */}
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1.5 bg-slate-700 text-slate-300 rounded font-mono text-sm border border-slate-600 hover:border-primary-500 hover:text-primary-400 transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+        {/* Skills Grid - Dependency Style */}
+        <div className="max-w-3xl mx-auto mb-12">
+          <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+            <div className="flex items-center gap-2 px-4 py-3 bg-slate-950 border-b border-slate-700">
+              <div className="w-3 h-3 rounded-full bg-red-500" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500" />
+              <div className="w-3 h-3 rounded-full bg-green-500" />
+              <span className="ml-4 text-slate-500 font-mono text-sm">package.json</span>
             </div>
-          ))}
+
+            <div className="p-6 font-mono text-sm space-y-6">
+              {skillCategories.map((category) => (
+                <div key={category.title}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <category.icon className="w-4 h-4 text-primary-400" />
+                    <span className="text-slate-300">"{category.title.toLowerCase().replace(/\s/g, '_')}"</span>
+                    <span className="text-slate-500">:</span>
+                    <span className="text-slate-500">{'['}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pl-6 pb-1">
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-2.5 py-1 bg-slate-700 text-slate-300 rounded border border-slate-600 hover:border-primary-500 hover:text-primary-400 transition-colors"
+                      >
+                        "{skill}"
+                      </span>
+                    ))}
+                  </div>
+                  <span className="text-slate-500">{']'}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Additional Skills Cloud */}
+        {/* Additional Skills */}
         <div className="text-center">
-          <h4 className="text-lg font-semibold text-white mb-4 font-mono">
-            <span className="text-accent-400">export const</span> additionalSkills
+          <h4 className="text-sm font-semibold text-slate-500 mb-4 font-mono">
+            <span className="text-accent-400">export const</span> competencies: string[]
           </h4>
           <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
             {additionalSkills.map((skill) => (
               <span
                 key={skill}
-                className="px-4 py-2 bg-slate-800 text-slate-400 rounded-lg text-sm font-mono border border-slate-700 hover:border-accent-500 hover:text-accent-400 transition-all"
+                className="px-3 py-1.5 bg-slate-800 text-slate-400 rounded text-sm font-mono border border-slate-700 hover:border-accent-500 hover:text-accent-400 transition-all"
               >
-                '{skill}'
+                {skill}
               </span>
             ))}
           </div>
         </div>
 
-        {/* Terminal Footer */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-4 px-6 py-3 bg-slate-800 rounded-xl border border-slate-700">
-            <span className="text-green-400 font-mono">$</span>
-            <span className="text-slate-400 font-mono text-sm">npm run test</span>
-            <span className="text-green-400 font-mono text-sm">// all passed</span>
-            <span className="w-2 h-5 bg-primary-400 animate-pulse" />
+        {/* Build Status */}
+        <div className="mt-10 flex justify-center">
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-slate-800 rounded-lg border border-slate-700">
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-slate-400 font-mono text-sm">build: passing</span>
+            <span className="text-slate-600">|</span>
+            <span className="text-slate-400 font-mono text-sm">coverage: 95%</span>
           </div>
         </div>
       </div>

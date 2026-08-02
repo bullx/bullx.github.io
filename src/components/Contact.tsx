@@ -73,7 +73,14 @@ export default function Contact() {
               <div className="pl-8">
                 <span className="text-primary-400">"github"</span>
                 <span className="text-slate-500">: </span>
-                <span className="text-slate-600">"available on request"</span>
+                <a
+                  href="https://github.com/bullx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-400 hover:text-accent-300 underline transition-colors"
+                >
+                  "github.com/bullx"
+                </a>
               </div>
 
               <div className="pl-4 text-slate-500">{`}`}</div>
@@ -99,6 +106,15 @@ export default function Contact() {
             >
               <Linkedin size={20} />
               <span>Connect on LinkedIn</span>
+            </a>
+            <a
+              href="https://github.com/bullx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-medium rounded-lg border border-slate-700 hover:bg-slate-700 hover:border-slate-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <Github size={20} />
+              <span>GitHub</span>
             </a>
           </div>
         </div>
